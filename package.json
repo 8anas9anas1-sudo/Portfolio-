@@ -1,0 +1,11 @@
+{
+  "name": "anas-wadi-portfolio",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Anas Wadi portfolio — static site + GitHub-backed admin panel (Vercel)",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test tests/api.test.js",
+    "dev": "vercel dev"
+  }
+}

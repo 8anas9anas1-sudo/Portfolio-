@@ -1,0 +1,54 @@
+/* =====================================================================
+   Design tokens — المصدر الوحيد للألوان والأحجام والظلال
+   الموقع ولوحة التحكم يقرآن من هنا فقط: غيّر قيمة هنا وتتغير في الاثنين.
+   ===================================================================== */
+:root{
+  /* ---- Surfaces ---- */
+  --bg:#0A0620;
+  --panel:rgba(255,255,255,0.05);          /* .glass */
+  --panel-strong:rgba(255,255,255,0.08);   /* .glass-strong */
+  --border:rgba(255,255,255,0.08);
+  --border-strong:rgba(255,255,255,0.12);
+
+  /* ---- Brand + status colors ---- */
+  --blue:#00E5FF;    /* اللون الأساسي (روابط · تركيز · eyebrow) */
+  --blue2:#8B2FFF;   /* الثانوي (تدرّج) */
+  --gold:#FFB800;
+  --green:#00FF88;   /* نجاح / مباشر */
+  --orange:#FF6B2A;
+  --purple:#FF2FD1;
+  --red:#FF4D6D;     /* حذف / خطأ */
+  --wa:#25D366;      /* واتساب */
+
+  /* ---- Text (على الخلفية الداكنة) ---- */
+  --text:#fff;
+  --text-hi:rgba(255,255,255,0.8);
+  --text-md:rgba(255,255,255,0.7);
+  --text-muted:rgba(255,255,255,0.6);
+  --text-dim:rgba(255,255,255,0.5);
+  --text-faint:rgba(255,255,255,0.4);
+
+  /* ---- Radius ---- */
+  --r-sm:12px;
+  --r-md:14px;     /* أيقونات · حقول */
+  --r-lg:18px;     /* بطاقات صغيرة */
+  --r-xl:24px;     /* بطاقات المشاريع */
+  --r-2xl:28px;
+  --r-3xl:32px;
+  --r-pill:999px;  /* الأزرار والشارات دائماً pill */
+
+  /* ---- Type ---- */
+  --font-sans:'GraphikArabic','Segoe UI','Dubai','Noto Kufi Arabic','Geeza Pro',Tahoma,Arial,sans-serif;
+  --font-mono:ui-monospace,'SFMono-Regular','Cascadia Code','Fira Code',Consolas,monospace;
+
+  /* ---- Effects ---- */
+  --gradient-brand:linear-gradient(to left,var(--blue),var(--blue2));
+  --gradient-brand-diag:linear-gradient(135deg,var(--blue),var(--blue2));
+  --glow-neon:0 0 20px rgba(0,229,255,0.3), 0 0 40px rgba(139,47,255,0.2);
+  --shadow-lift:0 20px 50px -22px rgba(139,47,255,0.55);
+
+  /* ---- Layers ---- */
+  --z-nav:50;
+  --z-detail:70;
+  --z-toast:80;
+}

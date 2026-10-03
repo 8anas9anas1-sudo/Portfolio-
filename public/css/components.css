@@ -1,0 +1,87 @@
+/* ================= Filter pills (تبويبات / فلاتر) ================= */
+.filter-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:20px;}
+.filter-btn{padding:8px 16px; border-radius:var(--r-pill); font-size:12px; font-weight:800; border:1px solid var(--border-strong); transition:.15s;}
+.filter-btn.active{background:#fff; color:#000; border-color:#fff;}
+.filter-btn:not(.active):hover{background:rgba(255,255,255,0.08);}
+.btn, .filter-btn{ transition:.15s ease; }
+.btn:active, .filter-btn:active{ transform:scale(0.96); }
+
+/* ================= Ambient glow (خلفية الإضاءة) ================= */
+.glow{position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden;}
+.glow div{position:absolute; border-radius:50%; filter:blur(130px);}
+.glow .g1{top:-20%; right:-10%; width:620px; height:620px; background:rgba(139,47,255,0.26);}
+.glow .g2{top:30%; left:-15%; width:520px; height:520px; background:rgba(0,229,255,0.20);}
+.glow .g3{bottom:-10%; right:15%; width:640px; height:640px; background:rgba(255,47,209,0.16);}
+
+/* ================= Surfaces + utilities ================= */
+.glass{background:var(--panel); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border:1px solid var(--border);}
+.glass-strong{background:var(--panel-strong); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid var(--border-strong);}
+.neon-glow{box-shadow:var(--glow-neon);}
+.neon-text{text-shadow:0 0 10px rgba(0,229,255,0.6);}
+.rounded-full{border-radius:var(--r-pill);}
+.rounded-xl{border-radius:var(--r-md);}
+.rounded-2xl{border-radius:var(--r-lg);}
+.rounded-24{border-radius:var(--r-xl);}
+.rounded-28{border-radius:var(--r-2xl);}
+.rounded-32{border-radius:var(--r-3xl);}
+
+/* ================= Motion ================= */
+@keyframes float{0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)}}
+.float{animation:float 3s ease-in-out infinite;}
+@keyframes pulse{50%{opacity:.4}}
+.pulse{animation:pulse 2s cubic-bezier(.4,0,.6,1) infinite;}
+
+/* ================= App bar (شريط علوي ثابت: الموقع + اللوحة) ================= */
+nav.topnav{position:fixed; top:0; left:0; right:0; z-index:var(--z-nav); border-bottom:1px solid var(--border); padding-top:env(safe-area-inset-top,0px);}
+.nav-inner{max-width:1180px; margin:0 auto; padding:0 20px; height:64px; display:flex; align-items:center; justify-content:space-between;}
+@media(min-width:768px){ .nav-inner{padding:0 32px;} }
+
+/* ================= Brand ================= */
+.brand{display:flex; align-items:center; gap:10px;}
+.brand .logo{width:36px; height:36px; border-radius:var(--r-md); background:var(--gradient-brand-diag); display:flex; align-items:center; justify-content:center; font-weight:900; font-size:16px;}
+.brand .name{font-weight:900; font-size:18px; letter-spacing:-0.02em;}
+
+/* ================= Gradient text ================= */
+.grad{background:var(--gradient-brand); -webkit-background-clip:text; background-clip:text; color:transparent;}
+
+/* ================= Buttons ================= */
+.btn{padding:12px 24px; border-radius:var(--r-pill); font-weight:900; font-size:14px; display:inline-flex; align-items:center; gap:8px; transition:.15s;}
+.btn-wa{background:var(--wa); color:#000;}
+.btn-glass{transition:.15s;}
+.btn-glass:hover{background:rgba(255,255,255,0.1);}
+
+/* ================= Eyebrow / labels ================= */
+.eyebrow{font-size:12px; font-weight:900; letter-spacing:.06em; color:var(--blue);}
+
+/* ================= Badges + pills ================= */
+.status-badge{padding:5px 10px; border-radius:var(--r-pill); font-size:10px; font-weight:900; display:flex; align-items:center; gap:6px; white-space:nowrap;}
+.status-dot{width:6px; height:6px; border-radius:50%;}
+.tech-pill{padding:4px 10px; border-radius:var(--r-pill); background:rgba(0,0,0,0.4); border:1px solid rgba(0,229,255,0.2); font-size:10px; font-weight:700; font-family:var(--font-mono); color:rgba(0,229,255,0.9); letter-spacing:.01em;}
+
+/* ================= Button variants ================= */
+.btn-primary{background:#fff; color:#000;}
+.btn-primary:hover{background:var(--blue);}
+.btn-accent{background:var(--gradient-brand); color:#fff;}
+.btn-danger{color:var(--red); border-color:rgba(255,77,109,0.4);}
+.btn-sm{padding:8px 16px; font-size:12px;}
+.btn-block{display:flex; width:100%; justify-content:center;}
+.btn:disabled{opacity:.5; pointer-events:none;}
+
+/* ================= Panel ================= */
+.panel{border-radius:var(--r-xl); padding:16px;}
+
+/* ================= Forms ================= */
+.field{margin-bottom:18px;}
+.field-label{display:block; margin-bottom:8px; font-size:12px; font-weight:900; letter-spacing:.04em;}
+.field-label .req{color:var(--red);}
+.input, .select, .textarea{
+  display:block; width:100%; padding:12px 16px; border-radius:var(--r-md);
+  background:var(--panel); border:1px solid var(--border-strong); color:var(--text);
+  font:inherit; font-size:16px; line-height:1.6; transition:.15s;
+}
+.textarea{min-height:96px; resize:vertical; line-height:1.7;}
+.input::placeholder, .textarea::placeholder{color:var(--text-faint);}
+.input:focus, .select:focus, .textarea:focus{border-color:var(--blue);}
+.select option{background:var(--bg); color:var(--text);}
+.hint{margin-top:6px; font-size:11.5px; line-height:1.6; color:var(--text-dim);}
+.field.invalid .input, .field.invalid .select, .field.invalid .textarea{border-color:var(--red);}
